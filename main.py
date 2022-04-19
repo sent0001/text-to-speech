@@ -1,3 +1,10 @@
+"""
+
+
+Credits: developer (sent#0001) check https://pretendbot.cf for support server
+
+
+"""
 import discord
 from discord.ext import commands
 import os
@@ -27,11 +34,12 @@ loc = {}
 exec(compile(ast.parse(patched), "<string>", "exec"), discord.gateway.__dict__, loc)
 discord.gateway.DiscordWebSocket.identify = loc["identify"]
 token = os.getenv('token')
-client = commands.Bot(command_prefix=".", activity=discord.Activity(type=discord.ActivityType.watching, name="Type .help for commands"), help_command=None)
+client = commands.Bot(command_prefix=".", activity=discord.Activity(type=discord.ActivityType.watching, name="Bot made by sent#0001"), help_command=None)
 
 @client.event
 async def on_ready():
     print(client.user.name + client.user.discriminator + ' is online')
+    print("sent#0001 the coolest")
 
 @client.command()
 async def tts(ctx, arg0, *, arg1):
@@ -61,6 +69,7 @@ async def help(ctx):
    embed.timestamp = datetime.datetime.utcnow()
    embed.set_thumbnail(url=client.user.avatar_url)
    embed.set_author(name=ctx.message.author.name+ctx.message.author.discriminator, icon_url=ctx.message.author.avatar_url)
+   embed.set_footer(text="Made by sent#0001", icon_url=client.user.avatar_url)
    await ctx.send(embed=embed)
 
 @client.command()
@@ -70,7 +79,8 @@ async def ping(ctx):
         f'mommy',
         f'your address',
         f'hot asian around your area',
-        f'pretendbot.cf'
+        f'pretendbot.cf',
+        f"sent's work"
     ]
     message = await ctx.send("pinging....")
     await asyncio.sleep(1)
@@ -85,6 +95,13 @@ async def botinfo(ctx):
     embed.add_field(name="statistics", value="guilds: " + " ** "f"{len(client.guilds)}" + "**\nusers: " + f"**{members}" + " ** \npython version: " + " **Python 3.10**\nping: " + f"**{round(client.latency * 1000)}ms**")
     embed.set_thumbnail(url=client.user.avatar_url)
     embed.set_author(name=ctx.message.author.name+ctx.message.author.discriminator, icon_url=ctx.message.author.avatar_url)
+    embed.set_footer(text="Made by sent#0001", icon_url=client.user.avatar_url)
     await ctx.send(embed=embed)
+"""
 
+
+Credits: developer (sent#0001) check https://pretendbot.cf for support server
+
+
+"""
 client.run(token, bot=True)
