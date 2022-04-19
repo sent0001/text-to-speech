@@ -51,13 +51,13 @@ async def tts(ctx, arg0, *, arg1):
         await ctx.send(file=discord.File(r'tts.mp3'))
         os.remove('tts.mp3')
     except:
-        embedVar = discord.Embed(description="<:check_warning:956780930066964500> " + ctx.message.author.mention + ": I couldn't send that!", color=0xFFFF00)
+        embedVar = discord.Embed(description="<:check_warning:956780930066964500> " + ctx.message.author.mention + ": I couldn't send that!\n\nUsage: `.tts en hello", color=0xFFFF00)
         await ctx.send(embed=embedVar)
 
 @tts.error
 async def flip_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-        embedVar = discord.Embed(title="Missing arguments", description="`;tts [language] [message]`", color=0xFF0000)
+        embedVar = discord.Embed(title="Missing arguments", description="`.tts [language] [message]`\n\nUsage: `.tts en hello", color=0xFF0000)
         await ctx.send(embed=embedVar)
 
 @client.command()
