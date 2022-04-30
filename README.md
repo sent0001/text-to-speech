@@ -4,7 +4,8 @@ To use it, change the token from the main.py folder into your bot's token.
 
 Requirements to install. Note that you need to install them using pip install command:
 
-- discord
+- discord.py
+- discord-py-slash-command
 - time
 - gtts
 - inspect
