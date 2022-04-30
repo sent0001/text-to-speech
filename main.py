@@ -179,7 +179,7 @@ async def tts(ctx, arg0, *, arg1):
 @tts.error
 async def flip_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-        embedVar = discord.Embed(title="Missing arguments", description="`;tts [language] [message]`", color=0xFF0000)
+        embedVar = discord.Embed(title="Missing arguments", description="`.tts [language] [message]`", color=0xFF0000)
         await ctx.send(embed=embedVar)
 """
 
